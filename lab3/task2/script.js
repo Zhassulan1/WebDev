@@ -7,25 +7,23 @@ function addTask() {
         return;
     }
 
-    // Create a new checkbox
-    let chkBox = document.createElement('label');
-    chkBox.type = 'checkbox';
-    chkBox.contentEditable = true;
-    chkBox.innerHTML = `<input type="checkbox"> <span class="task-text">${INPUT.value}</span>`;
-    TODOFORM.appendChild(chkBox);
+    let checkBox = document.createElement('label');
+    checkBox.type = 'checkbox';
+    checkBox.contentEditable = true;
+    checkBox.innerHTML = `<input type="checkbox"> <span class="task-text">${INPUT.value}</span>`;
+    TODOFORM.appendChild(checkBox);
 
-    // Create a delete button
     let deleteButton = document.createElement('button');
     deleteButton.innerHTML = 'Delete';
-    chkBox.appendChild(deleteButton);
+    checkBox.appendChild(deleteButton);
 
     deleteButton.addEventListener('click', function() {
         this.parentNode.remove(); 
-        saveTasks(); // Update localStorage
+        saveTasks();
     });
 
-    INPUT.value = ''; // Clear the input field
-    saveTasks(); // Update localStorage after adding the task
+    INPUT.value = '';
+    saveTasks();
 }
 
 function saveTasks() {
