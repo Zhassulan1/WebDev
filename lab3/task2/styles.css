@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.tasks {
+    /* Make tasks container a flexbox */
+    display: flex;
+    /* Stack items vertically */
+    flex-direction: column;
+    /* Remove default margin */
+    margin: 0;
+    /* Remove default padding */
+    padding: 0;
+}
+
+.tasks label {
+    /* Arrange label and checkbox horizontally */
+    display: flex;
+    /* Align checkbox vertically */
+    align-items: center;
+    /* Add spacing between items */
+    margin-bottom: 5px;
+    /* Reset default text decoration */
+    text-decoration: none;
+}
+
+.tasks label input[type="checkbox"] {
+    /* Space between checkbox and text */
+    margin-right: 10px;
+    padding: 5px;
+}
+
+
+.tasks label input[type="checkbox"]:checked+span {
+    text-decoration: line-through;
+}
