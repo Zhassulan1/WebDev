@@ -8,19 +8,14 @@ function addTask() {
     }
 
     let checkBox = document.createElement('label');
-    checkBox.type = 'checkbox';
-    checkBox.contentEditable = true;
-    checkBox.innerHTML = `<input type="checkbox"> <span class="task-text">${inputForm.value}</span>`;
+    checkBox.innerHTML = `<input type="checkbox"> <span class="task-text" contenteditable="true">${inputForm.value}</span>`;
     toDoForm.appendChild(checkBox);
 
     let deleteButton = document.createElement('button');
     deleteButton.innerHTML = 'Delete';
+    deleteButton.className = 'deleteButton';
+    deleteButton.contentEditable = false;
     checkBox.appendChild(deleteButton);
-
-    deleteButton.addEventListener('click', function() {
-        this.parentNode.remove(); 
-        saveTasks();
-    });
 
     inputForm.value = '';
     saveTasks();
