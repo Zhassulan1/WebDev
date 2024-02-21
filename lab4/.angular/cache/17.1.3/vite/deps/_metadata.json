@@ -1,40 +1,55 @@
 {
-  "hash": "a6125a20",
-  "configHash": "36d972f5",
+  "hash": "2652a99c",
+  "configHash": "6bafeb4a",
   "lockfileHash": "fbc9cdaf",
-  "browserHash": "cb1a5316",
+  "browserHash": "187819b1",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "0eaae61d",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "ce012530",
+      "fileHash": "a893ed38",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "3529997e",
+      "fileHash": "16fbffb1",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "191c097b",
+      "fileHash": "042a31f8",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "865feed9",
+      "fileHash": "ef1045d2",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "d6270038",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-4X4VW5YF": {
-      "file": "chunk-4X4VW5YF.js"
+    "chunk-UBD6MHFD": {
+      "file": "chunk-UBD6MHFD.js"
     },
-    "chunk-VZUOXG3Z": {
-      "file": "chunk-VZUOXG3Z.js"
+    "chunk-EAJE57VE": {
+      "file": "chunk-EAJE57VE.js"
+    },
+    "chunk-NCRJLOF7": {
+      "file": "chunk-NCRJLOF7.js"
     },
     "chunk-BDK72RLS": {
       "file": "chunk-BDK72RLS.js"
