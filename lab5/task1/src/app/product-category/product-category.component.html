@@ -1,0 +1,13 @@
+<h2>Categories</h2>
+
+<div *ngFor="let productCategory of productCategories" class="item">
+  <img [src]="productCategory.img" />
+  <h3>
+    <a
+      [title]="productCategory.name"
+      [routerLink]="['/products', productCategory.name]"
+    >
+      {{ productCategory.name }}
+    </a>
+  </h3>
+</div>
