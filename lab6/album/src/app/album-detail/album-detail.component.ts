@@ -1,0 +1,56 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import { Albums } from '../models';
+import { AlbumsService } from '../albums.service';
+
+@Component({
+  selector: 'app-album-detail',
+  standalone: true,
+  imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
+  templateUrl: './album-detail.component.html',
+  styleUrl: './album-detail.component.css'
+})
+export class AlbumDetailComponent implements OnInit {
+  album!: Albums;
+  updatedAlbum!: Albums;
+  loaded: boolean = false;
+  isUpdating: boolean = false;
+
+  constructor(private route: ActivatedRoute, private albumService: AlbumsService) { }
+
+  ngOnInit(): void {
+    this.getAlbum();
+  }
+
+
+  getAlbum() {
+    this.route.paramMap.subscribe((params) => {
+      const albumId = Number(params.get('albumId'));
+      this.loaded = false;
+      this.albumService.getAlbum(albumId).subscribe((album) => {
+        this.updatedAlbum =  { ...album};
+        this.album = album;
+        this.loaded = true;
+        this.updatedAlbum.title = '';
+      });
+    })
+  }
+
+
+  updateAlbum() {
+    this.isUpdating = true;
+    this.route.paramMap.subscribe((params) => {
+      const albumId = Number(params.get('albumId'));
+      this.albumService.updateAlbum(albumId, this.updatedAlbum).subscribe((updatedAlbum) => {
+        this.album = updatedAlbum;
+        this.isUpdating = false;
+        alert('Album updated successfully!');
+        this.updatedAlbum.title = ''; 
+      });
+    });
+  }
+
+}
